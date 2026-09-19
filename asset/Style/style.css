@@ -88,6 +88,52 @@ body {
     color: #c62828;
 }
 
+.chart-section {
+    margin-bottom: 25px;
+    padding: 25px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.chart-section h2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.chart {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 40px;
+    height: 200px;
+    padding: 20px;
+    border-bottom: 2px solid #ddd;
+}
+
+.chart-bar {
+    width: 80px;
+    height: 20px;
+    border-radius: 8px 8px 0 0;
+    transition: height 0.3s ease;
+}
+
+.income-bar {
+    background: #16803c;
+}
+
+.expense-bar {
+    background: #c62828;
+}
+
+.chart-labels {
+    display: flex;
+    justify-content: center;
+    gap: 65px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
 .transaction-form,
 .transaction-history {
     margin-bottom: 25px;
@@ -172,6 +218,11 @@ button {
     background: #d6d9dc;
 }
 
+.filters button.active {
+    background: #0077b6;
+    color: #fff;
+}
+
 #transaction-list {
     display: flex;
     flex-direction: column;
@@ -184,6 +235,61 @@ button {
     color: #777;
     content: "No transactions yet.";
     text-align: center;
+}
+
+.transaction-info small {
+    display: block;
+    margin-top: 4px;
+    color: #777;
+    font-size: 13px;
+}
+
+#transaction-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    background: #f8f9fa;
+}
+
+.transaction-info {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.income-item {
+    border-left: 4px solid #16803c;
+}
+
+.expense-item {
+    border-left: 4px solid #c62828;
+}
+
+.transaction-amount {
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.income-item .transaction-amount {
+    color: #16803c;
+}
+
+.expense-item .transaction-amount {
+    color: #c62828;
+}
+
+.delete-button {
+    padding: 7px 10px;
+    background: #c62828;
+    color: #fff;
+}
+
+.delete-button:hover {
+    background: #a51f1f;
 }
 
 @media (max-width: 600px) {
@@ -200,7 +306,8 @@ button {
     }
 
     .transaction-form,
-    .transaction-history {
+    .transaction-history,
+    .chart-section {
         padding: 20px;
     }
 
@@ -215,5 +322,26 @@ button {
 
     .filters button {
         flex: 1;
+    }
+
+    .chart {
+        gap: 25px;
+    }
+
+    .chart-labels {
+        gap: 45px;
+    }
+
+    #transaction-list li {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .transaction-info {
+        width: 100%;
+    }
+
+    .delete-button {
+        width: 100%;
     }
 }
