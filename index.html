@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Expense Tracker</title>
+    <link rel="stylesheet" href="./asset/Style/style.css" />
+  </head>
+  <body>
+    <main class="expense-tracker">
+      <header class="app-header">
+        <h1>Expense Tracker</h1>
+        <p>Manage your income and expenses</p>
+      </header>
+
+      <section class="summary">
+        <div class="balance">
+          <h2>Total Balance</h2>
+          <p id="balance">0 FCFA</p>
+        </div>
+
+        <div class="summary-items">
+          <div class="summary-item income">
+            <h3>Total Income</h3>
+            <p id="income">0 FCFA</p>
+          </div>
+
+          <div class="summary-item expenses">
+            <h3>Total Expenses</h3>
+            <p id="expenses">0 FCFA</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="chart-section">
+        <h2>Income vs Expenses</h2>
+
+        <div class="chart">
+          <div id="income-chart" class="chart-bar income-bar"></div>
+
+          <div id="expense-chart" class="chart-bar expense-bar"></div>
+        </div>
+
+        <div class="chart-labels">
+          <span>Income</span>
+          <span>Expenses</span>
+        </div>
+      </section>
+
+      <section class="transaction-form">
+        <h2>Add Transaction</h2>
+
+        <form id="transaction-form">
+          <div class="form-group">
+            <label for="description">Description</label>
+            <input
+              type="text"
+              id="description"
+              placeholder="Enter description"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="amount">Amount</label>
+            <input
+              type="number"
+              id="amount"
+              placeholder="Positive for income, negative for expense"
+              step="0.01"
+              required
+            />
+          </div>
+
+          <button type="submit">Add Transaction</button>
+        </form>
+      </section>
+
+      <section class="transaction-history">
+        <div class="history-header">
+          <h2>Transaction History</h2>
+
+          <div class="filters">
+            <button type="button" id="all-filter">All</button>
+            <button type="button" id="income-filter">Income</button>
+            <button type="button" id="expense-filter">Expenses</button>
+          </div>
+        </div>
+
+        <ul id="transaction-list"></ul>
+      </section>
+    </main>
+
+    <script src="./asset/Script/script.js"></script>
+  </body>
+</html>
