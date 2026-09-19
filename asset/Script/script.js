@@ -75,9 +75,9 @@ function displayTransactions(filter = "all") {
         </div>
 
         <span class="transaction-amount">
-          ${transaction.amount >= 0 ? "+" : "-"}$${Math.abs(
+          ${transaction.amount >= 0 ? "+" : "-"}${Math.abs(
             transaction.amount,
-          ).toFixed(2)}
+          ).toFixed(0)} FCFA
         </span>
       </div>
 
@@ -113,9 +113,9 @@ function updateTotals() {
 
   const balance = income + expenses;
 
-  balanceDisplay.textContent = `$${balance.toFixed(2)}`;
-  incomeDisplay.textContent = `$${income.toFixed(2)}`;
-  expensesDisplay.textContent = `$${Math.abs(expenses).toFixed(2)}`;
+  balanceDisplay.textContent = `${balance.toFixed(0)} FCFA`;
+  incomeDisplay.textContent = `${income.toFixed(0)} FCFA`;
+  expensesDisplay.textContent = `${Math.abs(expenses).toFixed(0)} FCFA`;
 }
 
 function updateChart() {
