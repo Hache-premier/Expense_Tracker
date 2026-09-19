@@ -1,0 +1,219 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: #f4f6f8;
+    color: #222;
+    font-family: Arial, sans-serif;
+    padding: 30px 15px;
+}
+
+.expense-tracker {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.app-header {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.app-header h1 {
+    margin-bottom: 8px;
+    font-size: 32px;
+}
+
+.app-header p {
+    color: #666;
+    font-size: 16px;
+}
+
+.summary {
+    margin-bottom: 25px;
+}
+
+.balance {
+    margin-bottom: 15px;
+    padding: 25px;
+    border-radius: 12px;
+    background: #222;
+    color: #fff;
+    text-align: center;
+}
+
+.balance h2 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.balance p {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.summary-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.summary-item {
+    padding: 20px;
+    border-radius: 12px;
+    background: #fff;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.summary-item h3 {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.summary-item p {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.income p {
+    color: #16803c;
+}
+
+.expenses p {
+    color: #c62828;
+}
+
+.transaction-form,
+.transaction-history {
+    margin-bottom: 25px;
+    padding: 25px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.transaction-form h2,
+.transaction-history h2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.form-group input:focus {
+    border-color: #0077b6;
+    outline: 2px solid #cceeff;
+}
+
+button {
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.transaction-form button {
+    width: 100%;
+    padding: 12px;
+    background: #0077b6;
+    color: #fff;
+}
+
+.transaction-form button:hover {
+    background: #005f8f;
+}
+
+.history-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.history-header h2 {
+    margin-bottom: 0;
+}
+
+.filters {
+    display: flex;
+    gap: 8px;
+}
+
+.filters button {
+    padding: 8px 12px;
+    background: #e9ecef;
+    color: #333;
+}
+
+.filters button:hover {
+    background: #d6d9dc;
+}
+
+#transaction-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+}
+
+#transaction-list:empty::before {
+    padding: 20px;
+    color: #777;
+    content: "No transactions yet.";
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 20px 10px;
+    }
+
+    .app-header h1 {
+        font-size: 26px;
+    }
+
+    .summary-items {
+        grid-template-columns: 1fr;
+    }
+
+    .transaction-form,
+    .transaction-history {
+        padding: 20px;
+    }
+
+    .history-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .filters {
+        width: 100%;
+    }
+
+    .filters button {
+        flex: 1;
+    }
+}
